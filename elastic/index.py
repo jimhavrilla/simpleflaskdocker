@@ -75,8 +75,8 @@ def index_sample(INDEX_NAME='sample',path_to_db='sampledb.txt'):
                 for row in dictfile:
                     data = {}
                     data['ID'] = row['DescriptorUI']
-                    data['NAME'] = row['DescriptorName']
-                    data['NAMEEXACT'] = row['DescriptorName']
+                    data['NAME'] = row['Name']
+                    data['NAMEEXACT'] = row['Name']
                     action = {"_index": INDEX_NAME, '_source': data}
                     es_data.append(action)
                     if len(es_data) > 1000:

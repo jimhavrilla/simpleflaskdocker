@@ -9,7 +9,7 @@ services:
             - ./elastic/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
         environment:
             - bootstrap.memory_lock=true
-            - "ES_JAVA_OPTS=-Xms2g -Xmx2g" # good amount of set aside memory for ES for a small web server
+            - "ES_JAVA_OPTS=-Xms500m -Xmx500m" # good amount of set aside memory for ES for a small web server
             - discovery.type=single-node
         ports: # Expose Elasticsearch ports
             - "9200:9200"
