@@ -5,9 +5,16 @@ def indexquery(query_json,index='autosuggest', size=10):
     backend implementation of esquery for autosuggest
     query_json: elastic search json.
     '''
-    es = Elasticsearch(["localhost:9200"], timeout=60, retry_on_timeout=True)
-    query_string_query = query_json
-    result = es.search(index=index, body=query_string_query,size=size)
+    try:
+        es = Elasticsearch(["elasticsearch:9200"], timeout=60, retry_on_timeout=True)
+        result = es.search(index=index, body=query_json,size=size)
+    except:
+        try:
+            es = Elasticsearch(["localhost:9200"], timeout=60, retry_on_timeout=True)
+            result = es.search(index=index, body=query_json,size=size)
+        except Exception as e:
+            return e
+
     return result
 
 def elasticquery(query,index):
