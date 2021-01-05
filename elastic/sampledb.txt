@@ -1,0 +1,10 @@
+DescriptorUI	Name
+D000007	Abdominal Injuries
+D000006	Abdomen, Acute
+D000008	Abdominal Neoplasms
+D000009	Abdominal Muscles
+D000010	Abducens Nerve
+D020222	Abducens Nerve Injury
+D000011	Abelson murine leukemia virus
+D000001	Calcimycin
+D000900	Anti-Bacterial Agents
