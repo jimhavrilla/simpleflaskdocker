@@ -10,5 +10,5 @@ WORKDIR /code
 ENV FLASK_APP app.py
 ENV FLASK_RUN_HOST 0.0.0.0
 COPY . /code
-RUN chmod +x /code/app_init.sh
-ENTRYPOINT sh /code/app_init.sh
+ENTRYPOINT ["python"]
+CMD ["app.py"]
